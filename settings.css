@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Khula&family=Sacramento&display=swap');
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Khula', 'Pretendard-Regular';
+}
+body{
+    background-color: #F0F5F9;
+    margin: 0;
+    min-width: 300px;
+    max-width: 1080px;
+    margin: auto;
+}
+header{
+    min-width: 300px;
+    height: 60px;
+    text-align: center;
+    border-bottom: 1px solid #DDDDDD;
+}
+.logo{
+    font-family: 'Sacramento';
+    font-size: 23px;
+    margin-right: auto;
+}
+main{
+    min-width: 300px;
+    max-width: 600px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+main > img{
+    display: block;
+    min-height: 180px;
+    margin: 30px auto;
+}
+main > div{
+    min-width: 300px;
+    max-width: 600px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+.settings-desc{
+    width: 100%;
+    margin: 10px 0;
+}
+#settings-title{
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0;
+}
+.settings-descs{
+    font-size: 12px;
+    padding-left: 5px;
+    margin: 1px 0;
+    color: #B5D1E4;
+}
+.settings{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+.settings > label{
+    height: 22px;
+    font-size: 16px;
+}
+.settings > input{
+    height: 52px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    border: 1px solid #C8C5CB;
+    font-size: 14px;
+    padding: 16px;
+    /* color: black; */
+    position: relative;
+}
+::-webkit-calendar-picker-indicator{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+.settings > input::placeholder{
+    color: #C8C5CB;
+}
+.settings > input::before{
+    color: #C8C5CB;
+    content: attr(placeholder);
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+main > button{
+    font-size: 24px;
+    background-color: #CEE0EC;
+    border-radius: 30px;
+    color: white;
+    min-width: 300px;
+    min-height: 61px;
+    border: none;
+    line-height: 30px;
+    margin: 30px auto;
+}
+button:hover{
+    background-color: #0B84FE;
+}
+button:hover > span{
+    display: inline-flex;
+    justify-items: center;
+    align-items: center;
+    color: yellow;
+    transition: all 500ms 0s linear;
+}
+button:hover > span::after{
+    content: "🎉";
+}
+@media screen and (min-width: 800px) {
+    main{
+        display: grid;
+        max-width: 1080px;
+        height: 100%;
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: repeat(auto-fill,  minmax(100px, auto));
+        row-gap: 30px;
+        margin: auto;
+    }
+    main > div{
+        min-width: 350px;
+        max-width: 500px;
+    }
+    main > img{
+        grid-row: 1 / 4;
+        grid-column: 2 / 3;
+        min-height: 70%;
+        max-height: 80%;
+        margin: auto 30px;
+        justify-self: center;
+        align-self: center;
+    }
+}
