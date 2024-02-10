@@ -79,7 +79,6 @@ header{
 #header-title::before{
     content: "2024. January";
 }
-
 /* main */
 main{
     display: flex;
@@ -93,6 +92,7 @@ main{
 main > div{
     min-width: 300px;
     max-width: 500px;
+    padding: 10px 30px;
 }
 main .text-title{
     color: #555555;
@@ -126,7 +126,7 @@ main .text-datetime{
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: repeat(auto-fill, minmax(100px, auto));
         column-gap: 30px;
-        /* grid-auto-flow: row dense; */
+        align-items: flex-start;
         padding: 0 30px;
     }
     main > div{
