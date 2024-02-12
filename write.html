@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>good moment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Diphylleia&family=Sacramento&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="write.css">
+</head>
+<body>
+    <header id="header">
+        <div id="headerLogo">
+            <h2 id="logo">goodmoment</h2>
+        </div>
+        <nav id="buttonList">
+            <a href="./main.html" id="homeButton">Home</a>
+            <a href="" id="loginButton">Login</a>
+            <a href="" id="registerButton">Register</a>
+            <a href="./write.html" id="writeButton">Write</a>
+        </nav>
+    </header>
+    <main id="main">
+        <form action="" id="content">
+            <nav id="mainHeader">
+                <a href="" id="backButton"></a>
+                <nav id="inputList">
+                    <input type="reset" id="resetButton">
+                    <input type="image" src="./img/submit.png" id="submitButton">
+                </nav>
+            </nav>
+            <div id="mainContent">
+                <table class="table">
+                    <tr>
+                        <th>Title</th>
+                        <td>
+                            <input type = "text" name="title" placeholder="제목 입력" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <td>
+                            <input type = "date" name="date" placeholder="제목 입력" required>
+                        </td>
+                    </tr>
+                </table>
+                <div class="emotionButton">          
+                    <label class="emotionOption" for="emotion_1">
+                        <input type="radio" name="emotion" id="emotion_1" value="🙂">🙂
+                    </label>
+                    <label class="emotionOption" for="emotion_2">
+                        <input type="radio" name="emotion" id="emotion_2" value="😌">😌
+                    </label>
+                    <label class="emotionOption" for="emotion_3">
+                        <input type="radio" name="emotion" id="emotion_3" value="☺️">☺️
+                    </label>
+                    <label class="emotionOption" for="emotion_4">
+                        <input type="radio" name="emotion" id="emotion_4" value="😀">😀
+                    </label>
+                    <label class="emotionOption" for="emotion_5">
+                        <input type="radio" name="emotion" id="emotion_5" value="😝">😝
+                    </label>
+                    <label class="emotionOption" for="emotion_6">
+                        <input type="radio" name="emotion" id="emotion_6" value="🥳">🥳
+                    </label>
+                    <label class="emotionOption" for="emotion_7">
+                        <input type="radio" name="emotion" id="emotion_7" value="🥰">🥰
+                    </label>
+                </div>
+                <textarea name="content" id="mainText" cols="30" rows="10"></textarea>
+            </div>
+        </form>
+    </main>
+
+
+    <script src="write.js"></script>
+    
+</body>
+</html>
