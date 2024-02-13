@@ -81,7 +81,6 @@ main > div{
     border: 1px solid #C8C5CB;
     font-size: 14px;
     padding: 16px;
-    /* color: black; */
     position: relative;
 }
 ::-webkit-calendar-picker-indicator{

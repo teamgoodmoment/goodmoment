@@ -1,5 +1,10 @@
 import {loadNewPage} from './modules.js';
 const main = document.querySelector('main')
+const homeBtn = document.getElementById('home-btn')
+const loginBtn = document.getElementById('login-btn')
+const registerBtn = document.getElementById('register-btn')
+const writeBtn = document.getElementById('write-btn')
+const backBtn = document.getElementById('back-btn')
 const moments = JSON.parse(localStorage.getItem("moments"))
 
 moments.forEach(moment => {
@@ -21,13 +26,6 @@ moments.forEach(moment => {
     textDate.textContent = moment.date
     textCnt.textContent = moment.content
 });
-
-const homeBtn = document.getElementById('home-btn')
-const loginBtn = document.getElementById('login-btn')
-const registerBtn = document.getElementById('register-btn')
-const writeBtn = document.getElementById('write-btn')
-const backBtn = document.getElementById('back-btn')
-
 homeBtn.addEventListener('click',()=>{
     loadNewPage('settings')
 })
