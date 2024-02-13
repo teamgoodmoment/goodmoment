@@ -1,27 +1,32 @@
 document.addEventListener('DOMContentLoaded', function(){
     const form = document.getElementById("content");
+    let moments = JSON.parse(localStorage.getItem('moments')) || [];
 
     form.addEventListener('submit', function(event){
         event.preventDefault()
+        let currentLetters = moments.length
+        const maxLetters = localStorage.getItem("maxLetters");
 
-        const date= form.elements['date'].value;
+        if (currentLetters < maxLetters){
+            const date = form.elements['date'].value;
+            const formData = {
+                title: form.elements['title'].value,
+                date: date,
+                happiness: form.elements['emotion'].value,
+                content: form.elements['content'].value
+            }
 
-        const formData = {
-            title: form.elements['title'].value,
-            date: date,
-            emotin: form.elements['emotion'].value,
-            content: form.elements['content'].value
+            moments.push(formData)
+            let currentLetters = moments.length
+
+
+            localStorage.setItem('moments', JSON.stringify(moments));
+            alert("쪽지가 저장되었습니다.")
+
+        } else{
+            alert('유리병이 다 찼습니다.')
         }
-
-
-        localStorage.setItem('formData_' + date, JSON.stringify(formData));
-        alert("쪽지가 저장되었습니다")
-    })
-
-    form.addEventListener('reset', function(){
-        const date= form.elements['date'].value;
-        localStorage.removeItem(`formData_${date}`)
-        alert("쪽지가 삭제되었습니다.")
+        
     })
 
 })
