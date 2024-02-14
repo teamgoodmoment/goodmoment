@@ -1,0 +1,44 @@
+#wrap {background: #F0F5F9;}
+.container {position: relative; max-width: 480px; min-height: 100vh; margin: 0 auto;}
+header {padding: 30px 32px;}
+header .main_title {font-size: 24px; line-height: 32px; font-weight: 600;}
+header .main_title span {color: #2D90F3;}
+header .sub_title {margin-top: 8px; font-size: 16px; line-height: 24px;}
+header .sub_title span {font-weight: 600;}
+
+main {position: relative; min-height: calc(100vh - 124px); padding: 40px 20px 108px; background: url(../images/main_bg.png) no-repeat center bottom; background-size: 100% 50%;}
+main .bg_bottle {position: relative; margin: 30px 0 10px; min-height: 298px;}
+main .bg_bottle img {width: 80%; margin: 0 auto;}
+main .bg_bottle .btn_letter {position: absolute; top: 50%; left: 50%; transform: translate(-200%, -200%);}
+main .avg_text {color: #fff; font-size: 16px; line-height: 24px; text-align: center;}
+main .avg_text span {font-weight: 600;}
+
+footer {position: absolute; bottom: 0; display: flex; width: 100%; padding: 20px; justify-content: space-between;}
+footer .btn_fill,
+footer .btn_share {background: #CEE0EC; border: 1px solid #bdd6e7; border-radius: 8px; box-shadow: 0px 4px 8px rgba(190,215,230,0.6)}
+
+footer .btn_fill {width: calc(100% - 68px);}
+footer .btn_fill button {padding: 10px; color: #333; font-size: 16px; line-height: 24px; font-weight: 600;}
+footer .btn_share {width: 48px; height: 50px;}
+footer .btn_share button {padding: 12px 16px; font-size: 0; line-height: 0; background: url(../images/ico_share.png) no-repeat center center; background-size: 16px;}
+
+@media screen and (max-width: 640px){
+  .container {max-width: 100%;}
+  header {padding: 4.688vw 5vw;}
+  header .main_title {font-size: 3.75vw; line-height: 5vw;}
+  header .sub_title {margin-top: 1.25vw; font-size: 2.5vw; line-height: 3.75vw;}
+
+  main {min-height: calc(100vh - 19.375vw); padding: 6.25 3.125vw 16.875vw;}
+  main .bg_bottle {margin: 4.688vw 0 1.563vw; min-height: 46.563vw;}
+  main .avg_text {font-size: 2.5vw; line-height: 3.75vw;}
+
+  footer {padding: 3.125vw;}
+  footer .btn_fill,
+  footer .btn_share {border: 0.156vw solid #bdd6e7; border-radius: 1.25vw; box-shadow: 0px 0.625vw 1.25vw rgba(190,215,230,0.6)}
+
+  footer .btn_fill {width: calc(100% - 10.625vw);}
+  footer .btn_fill button {padding: 1.563vw; font-size: 2.5vw; line-height: 3.75vw;}
+  footer .btn_share {width: 7.5vw; height: 7.813vw;}
+  footer .btn_share button {padding: 1.875vw 2.5vw; background-size: 2.5vw;}
+
+}
