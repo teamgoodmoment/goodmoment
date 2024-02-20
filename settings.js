@@ -24,7 +24,6 @@ createBtn.addEventListener('click', ()=>{
     maxLetters = inputMaxLetters.value
     inputMaxLetters.value = '';
     if(maxLetters && openingDate && openingTime){
-        console.log('2');
         setSettingsToLocalStorage()
         loadNewPage('read')
     }else{
