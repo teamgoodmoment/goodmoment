@@ -1,3 +1,5 @@
+import {loadNewPage} from './modules.js'
+
 //url 복사
 const btnShare = document.querySelector('.btn_share button');
 const currentUrl=window.location.href;
@@ -9,14 +11,43 @@ btnShare.addEventListener('click', function (){
   });
 })
 
-const letterList = document.querySelectorAll('.btn_letter');
-const letterCount = letterList.length;
-const letterCountText = document.querySelector('.sub_title span');
+//유저 이름 표시
+const storedUserData = JSON.parse(localStorage.getItem('userData'));
+const userName = storedUserData.nickname;
+const userNameText = document.querySelector('.main_title span');
 
-// 행복 갯수 카운팅
-letterCountText.innerText = letterCount;
+userNameText.innerText = userName;
 
-//행복 갯수 초과 알림
-if(letterCount > 7) {
-  alert('추가할 수 있는 쪽지의 갯수를 초과했습니다.');
+
+//쪽지 등록 갯수 반영
+const currentLettersData = JSON.parse(localStorage.getItem("currentLetters"));
+let letterCountText = document.querySelector('.sub_title span');
+letterCountText.innerText = currentLettersData;
+
+// 쪽지 버튼 갯수만큼 보이기
+let btnLetterWrap = document.querySelector('.letter_wrap')
+let letterList = '<span class="btn_letter"><button>편지</button></span>'
+let letterListArr = []
+
+for (let i = 0; i < currentLettersData; i ++) {
+  letterListArr.push(letterList)
+  btnLetterWrap.innerHTML = letterListArr.toString().replace(/,/g,'');
+}
+
+//버튼 페이지 이동
+const btnLetterAdd = document.querySelector('.btn_fill button');
+const btnLetterView = document.querySelectorAll('.btn_letter button');
+
+btnLetterAdd.addEventListener('click',() => {
+  loadNewPage('write')
+})
+
+for (let el of btnLetterView) {
+  if(letterListArr.length > 0) {
+    el.addEventListener('click',() => {
+      loadNewPage('read')
+    })
+  } else{
+    alert('입력된 행복쪽지가 없습니다. 추가해주세요.')
+  }
 }
