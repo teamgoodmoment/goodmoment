@@ -45,10 +45,10 @@ button:hover{
     height: 36px;
     color: #5D5A88;
 }
-#write-btn:hover{
+.write-btn:hover{
     background-color: #0B84FE;
 }
-nav > button#write-btn{
+nav > .write-btn{
     background-color: #BAD9EF;
     border: none;
     color: #FFFFFF;
@@ -63,20 +63,20 @@ header{
     display: flex;
     align-items: center;
 }
-#header-title{
+.header-title{
     text-align: center;
     position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%, 50%);
 }
-#back-btn{
+.back-btn{
     width: 24px;
     height: 24px;
-    background-image: url('./images/back.svg');
+    background-image: url('../images/back.svg');
     background-size: cover;
 }
-#header-title::before{
+.header-title::before{
     content: "2024. January";
 }
 /* main */
@@ -113,11 +113,11 @@ main .text-datetime{
         padding: 0 70px;
         font-size: 18px;
     }
-    #back-btn{
+    .back-btn{
         width: 28px;
         height: 28px;
     }
-    #header-title{
+    .header-title{
         position: static;
         transform: none;
     }
