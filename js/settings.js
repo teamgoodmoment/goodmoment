@@ -23,10 +23,11 @@ inputTime.addEventListener('change', ()=>{
 createBtn.addEventListener('click', ()=>{
     maxLetters = inputMaxLetters.value
     inputMaxLetters.value = '';
-    if(maxLetters && openingDate && openingTime){
-        console.log('2');
+    if(maxLetters <= 7 && openingDate && openingTime){
         setSettingsToLocalStorage()
-        loadNewPage('read')
+        loadNewPage('main')
+    }else if(maxLetters > 7) {
+        alert('최대 쪽지 개수를 초과하였습니다.')
     }else{
         alert('유리병 설정 값을 모두 입력해주세요‼️')
     }
@@ -36,6 +37,7 @@ function setSettingsToLocalStorage(){
     localStorage.setItem("openingDate", openingDate)
     localStorage.setItem("openingTime", openingTime)
     localStorage.setItem("maxLetters", maxLetters)
+    localStorage.setItem('currentLetters', 0)
 }
 
 function getTodayString(){
