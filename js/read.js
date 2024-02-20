@@ -27,7 +27,7 @@ moments.forEach(moment => {
     textCnt.textContent = moment.content
 });
 homeBtn.addEventListener('click',()=>{
-    loadNewPage('settings')
+    loadNewPage('main')
 })
 loginBtn.addEventListener('click',()=>{
     loadNewPage('login')
