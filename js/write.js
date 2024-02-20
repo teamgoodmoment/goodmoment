@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
     const form = document.getElementById("content");
-    let moments = JSON.parse(localStorage.getItem('moments')) || [];
+    let moments = localStorage.getItem("moments").length == 0 ? [] : JSON.parse(localStorage.getItem("moments"));
 
     form.addEventListener('submit', function(event){
         event.preventDefault()

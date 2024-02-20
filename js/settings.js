@@ -38,7 +38,7 @@ function setSettingsToLocalStorage() {
   localStorage.setItem("openingTime", openingTime);
   localStorage.setItem("maxLetters", maxLetters);
   localStorage.setItem("currentLetters", 0);
-  localStorage.setItem("moment", []);
+  localStorage.setItem("moments", []);
 }
 
 function getTodayString() {
