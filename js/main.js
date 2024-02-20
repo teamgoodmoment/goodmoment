@@ -12,7 +12,8 @@ btnShare.addEventListener('click', function (){
 })
 
 //유저 이름 표시
-const storedUserData = JSON.parse(localStorage.getItem('userData'));
+let id = localStorage.getItem("id")
+const storedUserData = JSON.parse(localStorage.getItem(`${id}userData`));
 const userName = storedUserData.nickname;
 const userNameText = document.querySelector('.main_title span');
 
@@ -20,7 +21,7 @@ userNameText.innerText = userName;
 
 
 //쪽지 등록 갯수 반영
-const currentLettersData = JSON.parse(localStorage.getItem("currentLetters"));
+const currentLettersData = JSON.parse(localStorage.getItem(`${id}currentLetters`));
 let letterCountText = document.querySelector('.sub_title span');
 letterCountText.innerText = currentLettersData;
 

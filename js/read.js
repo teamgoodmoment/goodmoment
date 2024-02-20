@@ -5,7 +5,8 @@ const loginBtn = document.getElementById('login-btn')
 const registerBtn = document.getElementById('register-btn')
 const writeBtn = document.getElementById('write-btn')
 const backBtn = document.getElementById('back-btn')
-const moments = JSON.parse(localStorage.getItem("moments"))
+let id = localStorage.getItem("id")
+const moments = JSON.parse(localStorage.getItem(`${id}moments`))
 
 moments.forEach(moment => {
     const wrapper = document.createElement('div') // div : wrapper(text-title, text-cnt, text-datetime)

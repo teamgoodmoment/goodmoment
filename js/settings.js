@@ -23,9 +23,12 @@ inputTime.addEventListener("change", () => {
 createBtn.addEventListener("click", () => {
   maxLetters = inputMaxLetters.value;
   inputMaxLetters.value = "";
+
   if (maxLetters <= 7 && openingDate && openingTime) {
     setSettingsToLocalStorage();
+    setSettingsToLocalStorage2();
     loadNewPage("main");
+
   } else if (maxLetters > 7) {
     alert("최대 쪽지 개수를 초과하였습니다.");
   } else {
@@ -39,6 +42,19 @@ function setSettingsToLocalStorage() {
   localStorage.setItem("maxLetters", maxLetters);
   localStorage.setItem("currentLetters", 0);
   localStorage.setItem("moments", []);
+}
+
+//id 키 추가
+function setSettingsToLocalStorage2() {
+  let id = localStorage.getItem("id")
+
+  localStorage.setItem(`${id}openingDate`, openingDate);
+  localStorage.setItem(`${id}openingTime`, openingTime);
+  localStorage.setItem(`${id}maxLetters`, maxLetters);
+  localStorage.setItem(`${id}currentLetters`, 0);
+  localStorage.setItem(`${id}moments`, []);
+
+  console.log(localStorage)
 }
 
 function getTodayString() {

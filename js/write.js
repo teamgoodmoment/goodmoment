@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(){
     const form = document.getElementById("content");
-    let moments = localStorage.getItem("moments").length == 0 ? [] : JSON.parse(localStorage.getItem("moments"));
+    let id = localStorage.getItem("id")
+    let moments = localStorage.getItem(`${id}moments`).length == 0 ? [] : JSON.parse(localStorage.getItem(`${id}moments`));
 
     form.addEventListener('submit', function(event){
         event.preventDefault()
@@ -18,8 +19,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
             moments.push(formData)
 
-            localStorage.setItem('moments', JSON.stringify(moments));
-            localStorage.setItem('currentLetters', JSON.stringify(moments.length))
+            let id = localStorage.getItem("id")
+
+            localStorage.setItem(`${id}moments`, JSON.stringify(moments));
+            localStorage.setItem(`${id}currentLetters`, JSON.stringify(moments.length))
             alert("쪽지가 저장되었습니다.")
             window.location.href = "./main.html";
 
