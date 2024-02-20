@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="css/settings.css">
     <title>goodmoment - 세팅</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
             <p class="settings-descs"> 좋은 순간을 담는 유리병의 오픈할 날짜와 시간을 설정하고, 유리병에 최대로 담을 쪽지의 수를 설정하세요.</p>
             <p class="settings-descs"> 오픈할 날이 되거나 유리병을 최대로 채우게 되면 나의 좋았던 순간들을 선물받게 됩니다.</p>
         </div>
-        <img src="./img/letterbottle.svg" alt="Image of a glass bottle containing letters"
+        <img src="./images/letterbottle.svg" alt="Image of a glass bottle containing letters"
             title="좋은 순간을 담는 유리병">
         <div class="settings">
             <label for="openingdate">Opening Date</label>
@@ -24,10 +24,10 @@
             <label for="openingtime">Opening Time</label>
             <input type="time" id="openingtime" class="opening" placeholder="유리병을 오픈할 날의 시간 설정" required>
             <label for="maxletters">Max Letters</label>
-            <input type="number" min="1" max="99999999" id="maxletters" class="opening" placeholder="유리병에 담을 최대 쪽지 개수" required>
+            <input type="number" min="1" max="7" id="maxletters" class="opening" placeholder="유리병에 담을 쪽지 개수 (최대 7개)" required>
         </div>
         <button id="createBtn" title="좋은 순간을 담는 유리병 만들기">Create <span>Happy Bottle</span></button>
     </main>
-    <script type="module" src="./settings.js"></script>
+    <script type="module" src="js/settings.js"></script>
 </body>
 </html>

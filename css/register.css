@@ -23,7 +23,7 @@
   width:  28px;
   height: 28px;
   margin-bottom: 20px;
-  background-image: url('./img/back.png');
+  background-image: url('../images/back.png');
 }
 #headerLogo {
   display: flex;

@@ -75,7 +75,7 @@
 #backButton{
     width:  28px;
     height: 28px;
-    background-image: url('./img/back.png');
+    background-image: url('../images/back.png');
 }
 #resetButton{
     width:  28px;
@@ -85,7 +85,7 @@
     color: transparent;
     background-color: white;
     border-width: 0;
-    background-image: url('./img/delete.png');
+    background-image: url('../images/delete.png');
     background-repeat: no-repeat;
 }
 #submitButton{

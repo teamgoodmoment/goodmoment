@@ -17,14 +17,15 @@ document.addEventListener('DOMContentLoaded', function(){
             }
 
             moments.push(formData)
-            let currentLetters = moments.length
-
 
             localStorage.setItem('moments', JSON.stringify(moments));
+            localStorage.setItem('currentLetters', JSON.stringify(moments.length))
             alert("쪽지가 저장되었습니다.")
+            window.location.href = "./main.html";
 
         } else{
             alert('유리병이 다 찼습니다.')
+            window.location.href = "./main.html";
         }
         
     })
