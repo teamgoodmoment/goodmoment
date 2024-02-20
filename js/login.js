@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // 로그인 성공 시 currentLetters 초기화
+  localStorage.setItem('currentLetters', '0');
+  
   let form = document.getElementById('content');
 
   form.addEventListener('submit', function(event){
@@ -7,9 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let id = document.querySelector('input[name="id"]').value;
     let password = document.querySelector('input[name="password"]').value;
 
+    localStorage.removeItem('currentLetters');
+
     let storedUserData = JSON.parse(localStorage.getItem('userData'));
 
     if (storedUserData && id === storedUserData.id && password === storedUserData.password) {
+
       let currentLetters = localStorage.getItem('currentLetters');
 
       if (currentLetters === null || parseInt(currentLetters) === 0){

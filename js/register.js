@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
           return;
       }
 
+
       let userData = {
           nickname: nickname,
           id: id,
@@ -37,6 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
       };
 
       localStorage.setItem('userData', JSON.stringify(userData));
+      
+      // 회원가입 완료 후 currentLetters 초기화
+      localStorage.setItem('currentLetters', '0');
+
       alert('회원가입이 완료되었습니다!');
 
       window.location.href = "./login.html";
