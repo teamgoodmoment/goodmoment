@@ -4,10 +4,13 @@
 }
 body{
     min-width: 360px;
-    max-width: 1080px;
     margin: auto;
 }
-/* nav */
+/* nav-header */
+#nav-header{
+    width: 100%;
+    border-bottom: 1px solid #DDDDDD;
+}
 .logo{
     font-family: 'Sacramento';
     font-size: 35px;
@@ -21,7 +24,7 @@ nav{
     justify-content: flex-end;
     max-width: 1080px;
     height: 90px;
-    border-bottom: 1px solid #DDDDDD;
+    margin: auto;
     padding: 0 50px;
 }
 nav > button{
@@ -49,10 +52,10 @@ button:hover{
     color: #5D5A88;
     cursor: pointer;
 }
-#write-btn:hover{
+#settings-btn:hover{
     background-color: #0B84FE;
 }
-nav > #write-btn{
+nav > #settings-btn{
     background-color: #BAD9EF;
     border: none;
     color: #FFFFFF;
@@ -94,7 +97,7 @@ main{
     font-family: 'Khula';
 }
 main > div{
-    min-width: 300px;
+    width: 80vw;
     max-width: 500px;
     padding: 10px 30px;
 }
@@ -131,6 +134,7 @@ main .text-datetime{
         column-gap: 30px;
         align-items: flex-start;
         padding: 0 30px;
+        margin: auto;
     }
     main > div{
         min-width: 200px;

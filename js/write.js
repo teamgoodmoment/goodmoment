@@ -1,12 +1,16 @@
 document.addEventListener('DOMContentLoaded', function(){
     const form = document.getElementById("content");
+    const homeBtn = document.getElementById('home-btn')
+    const loginBtn = document.getElementById('login-btn')
+    const registerBtn = document.getElementById('register-btn')
+    const writeBtn = document.getElementById('write-btn')
     let id = localStorage.getItem("id")
     let moments = localStorage.getItem(`${id}moments`).length == 0 ? [] : JSON.parse(localStorage.getItem(`${id}moments`));
 
     form.addEventListener('submit', function(event){
         event.preventDefault()
         let currentLetters = moments.length
-        const maxLetters = localStorage.getItem("maxLetters");
+        const maxLetters = localStorage.getItem(`${id}maxLetters`);
 
         if (currentLetters < maxLetters){
             const date = form.elements['date'].value;
@@ -32,7 +36,18 @@ document.addEventListener('DOMContentLoaded', function(){
         }
         
     })
-
+    homeBtn.addEventListener('click',()=>{
+        loadNewPage('main')
+    })
+    loginBtn.addEventListener('click',()=>{
+        loadNewPage('login')
+    })
+    registerBtn.addEventListener('click',()=>{
+        loadNewPage('register')
+    })
+    writeBtn.addEventListener('click',()=>{
+        loadNewPage('write')
+    })
 })
 
 

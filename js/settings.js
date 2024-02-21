@@ -26,7 +26,6 @@ createBtn.addEventListener("click", () => {
 
   if (maxLetters <= 7 && openingDate && openingTime) {
     setSettingsToLocalStorage();
-    setSettingsToLocalStorage2();
     loadNewPage("main");
 
   } else if (maxLetters > 7) {
@@ -36,16 +35,8 @@ createBtn.addEventListener("click", () => {
   }
 });
 
-function setSettingsToLocalStorage() {
-  localStorage.setItem("openingDate", openingDate);
-  localStorage.setItem("openingTime", openingTime);
-  localStorage.setItem("maxLetters", maxLetters);
-  localStorage.setItem("currentLetters", 0);
-  localStorage.setItem("moments", []);
-}
-
 //id 키 추가
-function setSettingsToLocalStorage2() {
+function setSettingsToLocalStorage() {
   let id = localStorage.getItem("id")
 
   localStorage.setItem(`${id}openingDate`, openingDate);

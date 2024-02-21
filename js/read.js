@@ -3,7 +3,7 @@ const main = document.querySelector('main')
 const homeBtn = document.getElementById('home-btn')
 const loginBtn = document.getElementById('login-btn')
 const registerBtn = document.getElementById('register-btn')
-const writeBtn = document.getElementById('write-btn')
+const settingsBtn = document.getElementById('settings-btn')
 const backBtn = document.getElementById('back-btn')
 let id = localStorage.getItem("id")
 const moments = JSON.parse(localStorage.getItem(`${id}moments`))
@@ -36,8 +36,8 @@ loginBtn.addEventListener('click',()=>{
 registerBtn.addEventListener('click',()=>{
     loadNewPage('register')
 })
-writeBtn.addEventListener('click',()=>{
-    loadNewPage('write')
+settingsBtn.addEventListener('click',()=>{
+    loadNewPage('settings')
 })
 backBtn.addEventListener('click',()=>{
     loadNewPage('main')
