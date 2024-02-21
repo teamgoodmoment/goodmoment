@@ -13,7 +13,6 @@ body{
     background-color: #F0F5F9;
     margin: 0;
     min-width: 300px;
-    max-width: 1080px;
     margin: auto;
 }
 header{
@@ -30,7 +29,7 @@ header{
     align-items: center;
     justify-content: center;
 }
-main{
+.main-content{
     min-width: 300px;
     max-width: 600px;
     padding: 30px;
@@ -40,12 +39,16 @@ main{
     align-items: center;
     margin: auto;
 }
-main > img{
+main{
+    max-width: 1080px;
+    margin: auto;
+}
+.main-content > img{
     display: block;
     min-height: 180px;
     margin: 30px auto;
 }
-main > div{
+.main-content > div{
     min-width: 300px;
     max-width: 600px;
     height: fit-content;
@@ -109,7 +112,7 @@ main > div{
     right: 0;
     bottom: 0;
 }
-main > button{
+.main-content > button{
     font-size: 24px;
     background-color: #CEE0EC;
     border-radius: 30px;
@@ -134,7 +137,7 @@ button:hover > span::after{
     content: "🎉";
 }
 @media screen and (min-width: 800px) {
-    main{
+    .main-content{
         display: grid;
         max-width: 1080px;
         height: 100%;
@@ -143,17 +146,17 @@ button:hover > span::after{
         row-gap: 30px;
         margin: auto;
     }
-    main > div{
+    .main-content > div{
         min-width: 350px;
         max-width: 600px;
         padding: 0 50px;
     }
-    main > img{
+    .main-content > img{
         grid-row: 1 / 4;
         grid-column: 2 / 3;
         min-height: 70%;
         max-height: 80%;
-        margin: auto 30px;
+        margin-right: 0;
         justify-self: center;
         align-self: center;
     }
