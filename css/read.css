@@ -137,7 +137,7 @@ main .text-datetime{
         margin: auto;
     }
     main > div{
-        min-width: 200px;
+        width: 100%;
         max-width: 300px;
         border-radius: 15px;
         box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.08);
