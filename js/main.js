@@ -2,7 +2,7 @@ import {loadNewPage} from './modules.js'
 
 //url 복사
 const btnShare = document.querySelector('.btn_share button');
-const currentUrl=window.location.href;
+const currentUrl = window.location.href;
 
 btnShare.addEventListener('click', function (){
   console.log('a');
@@ -19,13 +19,12 @@ const userNameText = document.querySelector('.main_title span');
 
 userNameText.innerText = userName;
 
-
 //쪽지 등록 갯수 반영
 const currentLettersData = JSON.parse(localStorage.getItem(`${id}currentLetters`));
 let letterCountText = document.querySelector('.sub_title span');
 letterCountText.innerText = currentLettersData;
 
-// 쪽지 버튼 갯수만큼 보이기
+//쪽지 버튼 갯수만큼 보이기
 let btnLetterWrap = document.querySelector('.letter_wrap')
 let letterList = '<span class="btn_letter"><button>편지</button></span>'
 let letterListArr = []
@@ -40,10 +39,16 @@ const btnLetterAdd = document.querySelector('.btn_fill button');
 const btnLetterView = document.querySelectorAll('.btn_letter button');
 
 
+//현재 쪽지 개수, 최대 개수 받기
+const currentLetters = localStorage.getItem(`${id}currentLetters`)
+const maxLetters = localStorage.getItem(`${id}maxLetters`)
 
 
 btnLetterAdd.addEventListener('click',() => {
-  loadNewPage('write')
+  if (currentLetters < maxLetters){
+    loadNewPage('write')
+  }
+    alert("유리병의 행복이 꽉 채워졌습니다~! 열람을 위해 행복 쪽지를 클릭해주세요.")
 })
 
 const openingDate = localStorage.getItem(`${id}openingDate`);
@@ -62,16 +67,16 @@ const currentTime = `${hours}:${minutes}`;
 
 for (let el of btnLetterView) {
   if(letterListArr.length > 0) {
-    if(currentDate >= openingDate && currentTime >= openingTime) {
+    if ( (currentLetters >= maxLetters) || (currentDate >= openingDate && currentTime >= openingTime)) {
       el.addEventListener('click',() => {
         loadNewPage('read')
       })
     } else {
       el.addEventListener('click',() => {
-        alert("아직 열람 가간이 아닙니다.")
+        alert("아직 열람 기간이 아닙니다.")
       })
     }
   } else{
-    alert('입력된 행복쪽지가 없습니다. 추가해주세요.')
+    alert('입력된 행복 쪽지가 없습니다. 추가해주세요.')
   }
 }

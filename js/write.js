@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function(){
     form.addEventListener('submit', function(event){
         event.preventDefault()
         let currentLetters = moments.length
-        const maxLetters = localStorage.getItem("maxLetters");
+        const maxLetters = localStorage.getItem(`${id}maxLetters`);
 
         if (currentLetters < maxLetters){
             const date = form.elements['date'].value;
