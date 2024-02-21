@@ -43,8 +43,15 @@ btnLetterAdd.addEventListener('click',() => {
   loadNewPage('write')
 })
 
+let today = new Date();   
+
+let hours = today.getHours();
+let minutes = today.getMinutes();
+
+let currentTime = `${hours}:${minutes}`
+
 for (let el of btnLetterView) {
-  if(letterListArr.length > 0) {
+  if(letterListArr.length > 0 && openingTime === currentTime) {
     el.addEventListener('click',() => {
       loadNewPage('read')
     })
