@@ -36,8 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
           password: password
       };
 
-      localStorage.setItem('userData', JSON.stringify(userData));
-
       localStorage.setItem(`${id}userData`, JSON.stringify(userData));
 
       alert('회원가입이 완료되었습니다!');
