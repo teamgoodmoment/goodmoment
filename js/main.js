@@ -19,11 +19,22 @@ const userNameText = document.querySelector('.main_title span');
 
 userNameText.innerText = userName;
 
-
 //쪽지 등록 갯수 반영
 const currentLettersData = JSON.parse(localStorage.getItem(`${id}currentLetters`));
 let letterCountText = document.querySelector('.sub_title span');
 letterCountText.innerText = currentLettersData;
+
+//쪽지 여부에 따른 메세지 노출
+if (currentLettersData === 0) {
+  //없는 경우 
+  document.querySelector('.sub_title_2').style.display = 'block';
+  document.querySelector('.sub_title').style.display = 'none';
+} else {
+  //있는 경우 
+  document.querySelector('.sub_title').style.display = 'block';
+  document.querySelector('.sub_title_2').style.display = 'none';
+}
+
 
 // 쪽지 버튼 갯수만큼 보이기
 let btnLetterWrap = document.querySelector('.letter_wrap')
@@ -38,9 +49,6 @@ for (let i = 0; i < currentLettersData; i ++) {
 //버튼 페이지 이동
 const btnLetterAdd = document.querySelector('.btn_fill button');
 const btnLetterView = document.querySelectorAll('.btn_letter button');
-
-
-
 
 btnLetterAdd.addEventListener('click',() => {
   loadNewPage('write')
@@ -68,10 +76,10 @@ for (let el of btnLetterView) {
       })
     } else {
       el.addEventListener('click',() => {
-        alert("아직 열람 가간이 아닙니다.")
+        alert("아직 열람 기간이 아닙니다.")
       })
     }
-  } else{
+  } else {
     alert('입력된 행복쪽지가 없습니다. 추가해주세요.')
   }
 }
