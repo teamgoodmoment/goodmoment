@@ -24,6 +24,8 @@
 #logo {
     font-size: 35px;
     font-family: 'Sacramento';
+    text-decoration-line: none;
+    color: #000;
 }
 #buttonList {
     width: 412px;
