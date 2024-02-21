@@ -12,6 +12,8 @@ body{
     font-family: 'Sacramento';
     font-size: 35px;
     margin-right: auto;
+    text-decoration: none;
+    color: inherit;
 }
 nav{
     display: none;
