@@ -12,6 +12,8 @@ body{
     font-family: 'Sacramento';
     font-size: 35px;
     margin-right: auto;
+    text-decoration: none;
+    color: inherit;
 }
 nav{
     display: none;
@@ -33,6 +35,7 @@ nav > button{
     border: 1px solid #D4D2E3;
     background-color: #FFFFFF;
     margin-left: 20px;
+    cursor: pointer;
 }
 button:hover{
     background-color: #EEEEEE;
@@ -44,6 +47,7 @@ button:hover{
     font-size: 16px;
     height: 36px;
     color: #5D5A88;
+    cursor: pointer;
 }
 #write-btn:hover{
     background-color: #0B84FE;
@@ -52,6 +56,7 @@ nav > #write-btn{
     background-color: #BAD9EF;
     border: none;
     color: #FFFFFF;
+    cursor: pointer;
 }
 /* header */
 header{
@@ -76,6 +81,7 @@ header{
     height: 24px;
     background-image: url('../images/back.png');
     background-size: cover;
+    cursor: pointer;
 }
 /* main */
 main{
