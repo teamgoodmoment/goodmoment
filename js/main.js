@@ -73,18 +73,28 @@ for (let el of btnLetterView) {
     el.addEventListener('click',() => {
       const today = new Date();
       const year = today.getFullYear();
-      const month = today.getMonth() + 1;
-      const date = today.getDate();
-      const hours = today.getHours();
-      const minutes = today.getMinutes();
+      const month = ("0" + (today.getMonth() + 1)).slice(-2);
+      const date = ("0" + today.getDate()).slice(-2);
+      const hours = ("0" + today.getHours()).slice(-2);
+      const minutes = ("0" + today.getMinutes()).slice(-2);
+
       const currentDate = `${year}-${month}-${date}`;
       const currentTime = `${hours}:${minutes}`;
 
-      if ((currentDate >= openingDate) && (currentTime >= openingTime)) {
+      console.log(openingTime, openingDate)
+      console.log(currentTime, currentDate)
+
+      if (currentDate > openingDate) {
         loadNewPage('read')
-      } else {
-        alert("아직 열람 기간이 아닙니다.")
-      } 
+      } else if (currentDate == openingDate) {
+        if (currentTime >= openingTime) {
+          loadNewPage('read')
+        } else {
+          alert('열람 시간이 남았습니다.')
+        }
+      } else if (currentDate < openingDate) {
+        alert('열람 시간이 남았습니다.')
+      }    
     }) 
   } else {
     alert('입력된 행복 쪽지가 없습니다. 추가해주세요.')
