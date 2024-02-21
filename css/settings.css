@@ -31,7 +31,7 @@ header{
 }
 .main-content{
     min-width: 300px;
-    max-width: 600px;
+    max-width: 80vw;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -42,15 +42,17 @@ header{
 main{
     max-width: 1080px;
     margin: auto;
+    height: calc(100%-60px);
 }
 .main-content > img{
     display: block;
-    min-height: 180px;
+    min-height: 80px;
+    height: 10vh;
     margin: 30px auto;
 }
 .main-content > div{
     min-width: 300px;
-    max-width: 600px;
+    max-width: 90%;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -117,7 +119,8 @@ main{
     background-color: #CEE0EC;
     border-radius: 30px;
     color: white;
-    min-width: 300px;
+    min-width: 270px;
+    width: 80%;
     min-height: 61px;
     border: none;
     line-height: 30px;
