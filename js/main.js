@@ -12,8 +12,7 @@ btnShare.addEventListener('click', function (){
 })
 
 //유저 이름 표시
-let id = localStorage.getItem("id")
-const storedUserData = JSON.parse(localStorage.getItem(`${id}userData`));
+const storedUserData = JSON.parse(localStorage.getItem('userData'));
 const userName = storedUserData.nickname;
 const userNameText = document.querySelector('.main_title span');
 
@@ -21,7 +20,7 @@ userNameText.innerText = userName;
 
 
 //쪽지 등록 갯수 반영
-const currentLettersData = JSON.parse(localStorage.getItem(`${id}currentLetters`));
+const currentLettersData = JSON.parse(localStorage.getItem("currentLetters"));
 let letterCountText = document.querySelector('.sub_title span');
 letterCountText.innerText = currentLettersData;
 
@@ -39,22 +38,35 @@ for (let i = 0; i < currentLettersData; i ++) {
 const btnLetterAdd = document.querySelector('.btn_fill button');
 const btnLetterView = document.querySelectorAll('.btn_letter button');
 
+const openingDate = JSON.parse(localStorage.getItem('openingDate'));
+const openingTime = JSON.parse(localStorage.getItem('openingTime'));
+
+const today = new Date();
+
+const year = today.getFullYear();
+const month = today.getMonth() + 1;
+const date = today.getDate();
+
+const hours = today.getHours();
+const minutes = today.getMinutes();
+const currentDate = `${year}-${month}-${date}`;
+const currentTime = `${hours}:${minutes}`;
+
+
 btnLetterAdd.addEventListener('click',() => {
   loadNewPage('write')
 })
 
-let today = new Date();   
-
-let hours = today.getHours();
-let minutes = today.getMinutes();
-
-let currentTime = `${hours}:${minutes}`
 
 for (let el of btnLetterView) {
-  if(letterListArr.length > 0 && openingTime === currentTime) {
-    el.addEventListener('click',() => {
-      loadNewPage('read')
-    })
+  if(letterListArr.length > 0) {
+    if(currentDate >= openingDate && currentTime >= openingTime) {
+      el.addEventListener('click',() => {
+        loadNewPage('read')
+      })
+    } else {
+      alert("아직 열람 가간이 아닙니다.")
+    }
   } else{
     alert('입력된 행복쪽지가 없습니다. 추가해주세요.')
   }
