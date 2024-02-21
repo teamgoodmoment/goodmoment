@@ -5,6 +5,7 @@ header .main_title {font-size: 24px; line-height: 32px; font-weight: 600;}
 header .main_title span {color: #2D90F3;}
 header .sub_title {margin-top: 8px; font-size: 16px; line-height: 24px;}
 header .sub_title span {font-weight: 600;}
+header .sub_title_2 {display: none;  font-size: 16px; line-height: 24px;}
 
 main {display: flex; min-height: calc(100vh - 124px); padding: 40px 20px 108px; background: url(../images/main_bg.png) no-repeat center bottom; background-size: 100% 50%; flex-direction: column; justify-content: center;}
 main .bg_bottle {position: relative; width: 80%; margin: 30px auto 10px; min-height: 298px;}

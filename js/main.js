@@ -24,7 +24,18 @@ const currentLettersData = JSON.parse(localStorage.getItem(`${id}currentLetters`
 let letterCountText = document.querySelector('.sub_title span');
 letterCountText.innerText = currentLettersData;
 
-//쪽지 버튼 갯수만큼 보이기
+//쪽지 여부에 따른 메세지 노출
+if (currentLettersData === 0) {
+  //없는 경우 
+  document.querySelector('.sub_title_2').style.display = 'block';
+  document.querySelector('.sub_title').style.display = 'none';
+} else {
+  //있는 경우 
+  document.querySelector('.sub_title').style.display = 'block';
+  document.querySelector('.sub_title_2').style.display = 'none';
+}
+
+// 쪽지 버튼 갯수만큼 보이기
 let btnLetterWrap = document.querySelector('.letter_wrap')
 let letterList = '<span class="btn_letter"><button>편지</button></span>'
 let letterListArr = []
