@@ -4,9 +4,12 @@
   font-size: 16px;
   margin: 0;
 }
-
+body{
+  margin: 0;
+  min-width: 300px;
+  margin: auto;
+}
 #main {
-  width: 100%;
   display: flex;
 }
 #left {
@@ -60,7 +63,7 @@
   padding-bottom: 10px;
 }
 .inputBox > input {
-  width: 500px;
+  width: 350px;
   height: 50px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -76,7 +79,7 @@
   padding: 40px 0 40px;
 }
 .btn {
-  width: 500px;
+  width: 350px;
   height: 60px;
   border-radius: 30px;
   border: none;
@@ -95,11 +98,12 @@ hr {
 .copyright {
   display: flex;
   justify-content: center;
-  width: 500px;
+  width: 350px;
   padding: 10px 0 10px;
 }
 .txt {
   color: #D2DDE5;
+  font-size: 14px;
 }
 
 
@@ -124,7 +128,7 @@ hr {
     border-bottom: 1px solid #ccc;
   }
   .arrow {
-    padding-right: 38%;
+    padding-right: 25%;
   }
   #left {
     width: 100%;
