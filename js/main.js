@@ -58,8 +58,9 @@ const maxLetters = localStorage.getItem(`${id}maxLetters`)
 btnLetterAdd.addEventListener('click',() => {
   if (currentLetters < maxLetters){
     loadNewPage('write')
-  }
+  }else{
     alert("유리병의 행복이 꽉 채워졌습니다~! 열람을 위해 행복 쪽지를 클릭해주세요.")
+  }
 })
 
 const openingDate = localStorage.getItem(`${id}openingDate`);
