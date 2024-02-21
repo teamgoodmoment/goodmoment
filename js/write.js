@@ -1,3 +1,4 @@
+import {loadNewPage} from './modules.js';
 document.addEventListener('DOMContentLoaded', function(){
     const form = document.getElementById("content");
     const homeBtn = document.getElementById('home-btn')
