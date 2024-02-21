@@ -12,7 +12,8 @@ btnShare.addEventListener('click', function (){
 })
 
 //유저 이름 표시
-const storedUserData = JSON.parse(localStorage.getItem('userData'));
+let id = localStorage.getItem("id")
+const storedUserData = JSON.parse(localStorage.getItem(`${id}userData`));
 const userName = storedUserData.nickname;
 const userNameText = document.querySelector('.main_title span');
 
@@ -20,7 +21,7 @@ userNameText.innerText = userName;
 
 
 //쪽지 등록 갯수 반영
-const currentLettersData = JSON.parse(localStorage.getItem("currentLetters"));
+const currentLettersData = JSON.parse(localStorage.getItem(`${id}currentLetters`));
 let letterCountText = document.querySelector('.sub_title span');
 letterCountText.innerText = currentLettersData;
 
@@ -38,8 +39,15 @@ for (let i = 0; i < currentLettersData; i ++) {
 const btnLetterAdd = document.querySelector('.btn_fill button');
 const btnLetterView = document.querySelectorAll('.btn_letter button');
 
-const openingDate = JSON.parse(localStorage.getItem('openingDate'));
-const openingTime = JSON.parse(localStorage.getItem('openingTime'));
+
+
+
+btnLetterAdd.addEventListener('click',() => {
+  loadNewPage('write')
+})
+
+const openingDate = localStorage.getItem(`${id}openingDate`);
+const openingTime = localStorage.getItem(`${id}openingTime`);
 
 const today = new Date();
 
@@ -52,12 +60,6 @@ const minutes = today.getMinutes();
 const currentDate = `${year}-${month}-${date}`;
 const currentTime = `${hours}:${minutes}`;
 
-
-btnLetterAdd.addEventListener('click',() => {
-  loadNewPage('write')
-})
-
-
 for (let el of btnLetterView) {
   if(letterListArr.length > 0) {
     if(currentDate >= openingDate && currentTime >= openingTime) {
@@ -65,7 +67,9 @@ for (let el of btnLetterView) {
         loadNewPage('read')
       })
     } else {
-      alert("아직 열람 가간이 아닙니다.")
+      el.addEventListener('click',() => {
+        alert("아직 열람 가간이 아닙니다.")
+      })
     }
   } else{
     alert('입력된 행복쪽지가 없습니다. 추가해주세요.')
