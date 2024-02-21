@@ -52,10 +52,10 @@ button:hover{
     color: #5D5A88;
     cursor: pointer;
 }
-#write-btn:hover{
+#settings-btn:hover{
     background-color: #0B84FE;
 }
-nav > #write-btn{
+nav > #settings-btn{
     background-color: #BAD9EF;
     border: none;
     color: #FFFFFF;
