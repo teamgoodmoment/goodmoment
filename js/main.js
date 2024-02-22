@@ -84,7 +84,7 @@ for (let el of btnLetterView) {
       console.log(openingTime, openingDate)
       console.log(currentTime, currentDate)
 
-      if ((currentDate > openingDate) || (currentLetters >= maxLetters)) {
+      if (currentDate > openingDate) {
         loadNewPage('read')
       } else if (currentDate == openingDate) {
         if (currentTime >= openingTime) {
