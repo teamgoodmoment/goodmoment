@@ -90,10 +90,10 @@ for (let el of btnLetterView) {
         if (currentTime >= openingTime) {
           loadNewPage('read')
         } else {
-          alert('열람 시간이 남았습니다.')
+          alert('아직 열람 시간이 되지 않았습니다.')
         }
       } else if (currentDate < openingDate) {
-        alert('열람 시간이 남았습니다.')
+        alert('아직 열람 시간이 되지 않았습니다.')
       }    
     }) 
   } else {
